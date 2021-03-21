@@ -1,0 +1,14 @@
+header {
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    justify-content: center;
+    text-align: center;
+}
+table, tr, td, th {
+    border: 1px solid black;
+    }
+.dark {
+    background-color: rgb(175, 174, 174);
+}

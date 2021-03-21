@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Random User API</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+       
+                    <div class="container">
+                        <table class="table table-striped">
+                            <thead class="dark">
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Age</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Address</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bottom-row">
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $.get("https://randomuser.me/api/?results=20", function(user) {
+                   
+                    var results = user.results;
+                    var htmlStr = "";
+                  
+                    for(var i = 0; i < results.length; i++) {
+                        var name = results[i].name.first +" " + results[i].name.last;
+                        var age = results[i].registered.age
+                        var email = results[i].email
+                        var address = results[i].location.street.number + " " +results[i].location.street.name + " " + results[i].location.city + " "+ results[i].location.state + " " + results[i].location.country;
+                        
+                        
+                        
+                    };
+                    $("#body_row").append(htmlStr += "<tr>" + <"td"> + name + "</td>" +"</tr");
+                }, "json");
+            });
+        </script>
+    </body>
+</html>
