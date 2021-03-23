@@ -1,7 +1,9 @@
 $(document).ready(function () {
     $.ajax({
-        url: 'https://randomuser.me/api/?results=20', dataType: 'json', success: function (user) {
-            console.log(user.results[0]);
+        url: 'https://randomuser.me/api/?results=20', 
+        dataType: 'json', 
+        success: function (user) {
+            console.log(user.results[i]);
             var results= user.results;
             for (var i = 0; i < results.length; i++) {
                 $("#user").append("<tr>" +

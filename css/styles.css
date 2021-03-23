@@ -9,6 +9,7 @@ h1{
 table, tr, td, th {
     border: 1px solid black;
     }
-.dark {
-    background-color: rgb(175, 174, 174);
-}
+    th{
+        color: white;
+    }
+
